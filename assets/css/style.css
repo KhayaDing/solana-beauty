@@ -51,14 +51,25 @@ nav {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(113,83,68,0.12);
 }
-.nav-logo {
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.nav-brand-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.35rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--coco);
-  text-decoration: none;
 }
 .nav-links {
   display: flex; gap: 42px; list-style: none;
@@ -725,6 +736,14 @@ nav {
   font-weight: 400;
   color: var(--dark);
 }
+.contact-item-value a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-item-value a:hover {
+  color: var(--pink);
+}
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
@@ -779,6 +798,18 @@ footer {
   gap: 60px;
   align-items: start;
 }
+.footer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.footer-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
 .footer-brand-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
@@ -786,7 +817,6 @@ footer {
   color: var(--cream);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 .footer-tagline {
   font-family: 'Great Vibes', cursive;
