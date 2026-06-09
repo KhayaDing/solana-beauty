@@ -1,0 +1,7 @@
+# Exclude directory containing files marked for deletion
+deleted/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
