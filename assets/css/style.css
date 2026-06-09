@@ -369,44 +369,57 @@ nav {
   padding: 44px 36px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease;
+  transition: background-color 0.7s ease, transform 0.7s ease, box-shadow 0.7s ease;
 }
-.service-card:hover { transform: translateY(-8px); }
-.service-card:nth-child(2) { background: var(--taupe); }
-.service-card:nth-child(2) .service-title,
-.service-card:nth-child(2) .service-num { color: white; }
-.service-card:nth-child(2) .service-desc { color: rgba(255,255,255,0.75); }
-.service-card:nth-child(2) .service-tag { background: rgba(255,255,255,0.2); color: white; }
+.service-card * {
+  transition: color 0.7s ease, background-color 0.7s ease, border-color 0.7s ease, opacity 0.7s ease;
+}
+.service-card:hover {
+  background: var(--coco); /* Deep coco brown #715344 */
+  transform: translateY(-6px); /* Subtle upward translate */
+  box-shadow: 0 20px 40px rgba(113, 83, 68, 0.15);
+}
 .service-card::after {
   content: '';
   position: absolute; bottom: 0; left: 0;
   width: 0; height: 3px;
-  background: var(--pink);
-  transition: width 0.5s ease;
+  background: var(--pink); /* Bright rose-pink #D4689A */
+  transition: width 0.7s ease;
 }
-.service-card:hover::after { width: 100%; }
+.service-card:hover::after {
+  width: 100%;
+}
 .service-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 3.5rem;
   font-weight: 300;
-  color: rgba(199,180,159,0.3);
+  color: rgba(113, 83, 68, 0.15); /* Faded warm coco brown */
   line-height: 1;
   margin-bottom: 20px;
+}
+.service-card:hover .service-num {
+  color: rgba(246, 243, 240, 0.15); /* Faded warm cream */
 }
 .service-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--dark);
+  color: var(--coco); /* Warm coco brown #715344 */
   margin-bottom: 14px;
   line-height: 1.2;
+}
+.service-card:hover .service-title {
+  color: var(--cream); /* Warm cream #F6F3F0 */
 }
 .service-desc {
   font-size: 0.8rem;
   font-weight: 300;
   line-height: 1.8;
-  color: var(--rosy-taupe);
+  color: var(--rosy-taupe); /* Muted taupe */
   margin-bottom: 22px;
+}
+.service-card:hover .service-desc {
+  color: var(--cream); /* Warm cream #F6F3F0 */
 }
 .service-tag {
   display: inline-block;
@@ -414,33 +427,44 @@ nav {
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--coco);
-  background: var(--cream);
+  color: var(--coco); /* Warm coco brown #715344 */
+  background: var(--cream); /* Soft cream background */
   padding: 6px 14px;
+}
+.service-card:hover .service-tag {
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+  color: var(--cream); /* Warm cream #F6F3F0 */
 }
 .service-price-row {
   display: flex; align-items: baseline; justify-content: space-between;
   margin-top: 18px;
   padding-top: 18px;
-  border-top: 1px solid rgba(199,180,159,0.25);
+  border-top: 1px solid rgba(113, 83, 68, 0.15); /* Thin separator line */
+}
+.service-card:hover .service-price-row {
+  border-top-color: rgba(246, 243, 240, 0.2);
 }
 .service-price {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
   font-weight: 400;
-  color: var(--coco);
+  color: var(--coco); /* Warm coco brown #715344 */
   line-height: 1;
 }
-.service-card:nth-child(2) .service-price { color: white; }
-.service-card:nth-child(2) .service-price-row { border-top-color: rgba(255,255,255,0.2); }
-.service-card:nth-child(2) .service-price-from { color: rgba(255,255,255,0.6); }
+.service-card:hover .service-price {
+  color: var(--cream); /* Warm cream #F6F3F0 */
+}
 .service-price-from {
   font-size: 0.65rem;
   font-weight: 300;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--rosy-taupe);
+  color: var(--rosy-taupe); /* Muted taupe */
   margin-bottom: 2px;
+}
+.service-card:hover .service-price-from {
+  color: var(--cream); /* Warm cream #F6F3F0 */
+  opacity: 0.75;
 }
 .service-price-book {
   font-size: 0.65rem;
@@ -450,7 +474,10 @@ nav {
   color: var(--pink);
   text-decoration: none;
   display: flex; align-items: center; gap: 5px;
-  transition: gap 0.3s;
+  transition: gap 0.3s, color 0.7s ease;
+}
+.service-card:hover .service-price-book {
+  color: var(--pink);
 }
 .service-price-book:hover { gap: 9px; }
 .service-price-book::after { content: '→'; }
